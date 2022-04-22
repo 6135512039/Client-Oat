@@ -106,7 +106,7 @@ export default function Register({ token }) {
         <title>Register</title>
       </Head>
       <Navbar />
-      <body className="background">{registerForm()}</body>
+      <body className="backgroundindex">{registerForm()}</body>
     </Layout>
   );
 }

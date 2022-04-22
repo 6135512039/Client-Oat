@@ -81,7 +81,7 @@ export default function Login({ token }) {
         <title>Login</title>
       </Head>
       <Navbar />
-      <body className="background">{loginForm()}</body>
+      <body className="backgroundindex">{loginForm()}</body>
     </Layout>
   );
 }

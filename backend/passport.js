@@ -8,7 +8,7 @@ const passportJWT = require("passport-jwt"),
     ExtractJWT = passportJWT.ExtractJwt,
     JWTStrategy = passportJWT.Strategy,
     LocalStrategy = require('passport-local').Strategy
-
+ 
 passport.use(
     new LocalStrategy({
         usernameField: 'username',
@@ -40,12 +40,9 @@ passport.use(
                 const index = db.checkExistingUser(jwtPayload.username)
                 if (index !== db.NOT_FOUND) {
                     // Strip password out
-                    const { id, username, email } = users.users[index]
-                    //Return to caller via req.user
-
-                    // ให้มันสร้าง API ที่ชื่อว่า  /api/foo โดยให้ส่ง ข้อความ คำว่า “Foo” กลับไปให้ (หากมี token) ถ้าไม่มี  token  ต้องส่งข้อความ  “Unauthorized”
-                    return cb(null, 'Foo'  /*{ id, username , email}*/);
-
+                    const { id, username, email ,rememberme} = users.users[index]
+                                    //Return to caller via req.user
+                    return cb(null, { id, username, email,rememberme }); 
                 } else {
                     return cb(null, false);
                 }

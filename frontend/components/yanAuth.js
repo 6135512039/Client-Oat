@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 
-const stdAuth= WrappedComponent => {
+const yanAuth= WrappedComponent => {
     const Wrapper = props => {
         const { token } = props
         const router = useRouter()
@@ -14,4 +14,4 @@ const stdAuth= WrappedComponent => {
     return Wrapper
 }
 
-export default stdAuth
+export default yanAuth

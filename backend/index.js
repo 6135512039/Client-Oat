@@ -1,4 +1,3 @@
-//6135512039
 const express = require('express'),
     app = express(),
     passport = require('passport'),

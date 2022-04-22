@@ -1,0 +1,49 @@
+html,
+.body {
+  font-family: Montserrat;
+  background-size: cover;
+  background-size: auto;
+  background-position: 50%;
+  background-color: black;
+  overflow: hidden; 
+}
+
+.background {
+  background: url("https://scontent.fbkk5-4.fna.fbcdn.net/v/t39.30808-6/279034067_4958853204210640_2156279555925009165_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=730e14&_nc_ohc=JuT7TwMTjRwAX_Vb0Kz&_nc_ht=scontent.fbkk5-4.fna&oh=00_AT8wrZWXPDlfTINewanBO3LoSntuuHFyc56ri0zG5HLidg&oe=626620FB");
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-size: 40%;
+  background-position: center;
+  background-color: black;
+  overflow: hidden; 
+}
+
+.show-icon{
+  background: url("https://scontent.fbkk5-4.fna.fbcdn.net/v/t39.30808-6/279034067_4958853204210640_2156279555925009165_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=730e14&_nc_ohc=JuT7TwMTjRwAX_Vb0Kz&_nc_ht=scontent.fbkk5-4.fna&oh=00_AT8wrZWXPDlfTINewanBO3LoSntuuHFyc56ri0zG5HLidg&oe=626620FB");
+  background-size: cover;
+  margin: auto;
+  text-align: center;
+  justify-items: center;
+  background-size: 40%;
+  background-position: 50%;
+  overflow: hidden;
+  background-repeat: no-repeat;  
+}
+
+.show-icon:hover{
+  transition: all 2.0s ease-in-out;
+  transform: rotate(360deg);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

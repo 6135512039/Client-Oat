@@ -13,7 +13,7 @@ let users = db.users
 let Yans = {
     list:
         [
-            { id: "001", band: 'Tesla', model: '3', hp: 450, price: "3,090,000" },
+            { id: "001", name: 'ยันต์ฉัตรเพชร', detail: 'โดดเด่นด้านโชคลาภการเงิน แก้ดวงชะตาที่ตกต่ำ และเสริมดวงชะตา เหมาะสำหรับผู้ที่ทำงานห้างร้าน ค้าขาย บริษัท มีบริวาร (ลูกน้อง) เยอะ ควบคุมอยู่', price: "5000" },
 
         ]
 }
@@ -38,9 +38,8 @@ router.route('/Yans')
         console.log(req.body)
         let newYan = {}
         newYan.id = (Yans.list.length) ? Yans.list[Yans.list.length-1].id+1 : 1
-        newYan.band = req.body.band
-        newYan.model = req.body.model
-        newYan.hp = req.body.hp
+        newYan.name = req.body.name
+        newYan.detail = req.body.detail
         newYan.price  = req.body.price
         Yans = { list: [...Yans.list, newYan] }
         res.json(Yans)
@@ -65,9 +64,8 @@ router.route('/Yans/:yan_id') //params
             res.send('Not Found')
         }
         else {
-            Yans.list[id].band = req.body.band
-            Yans.list[id].model = req.body.model
-            Yans.list[id].hp = req.body.hp
+            Yans.list[id].name = req.body.name
+            Yans.list[id].detail = req.body.detail
             Yans.list[id].price = req.body.price
             res.json(Yans)
         }
@@ -94,7 +92,7 @@ router.route('/Yans/:yan_id') //params
     let BuyYans = {
         list:
             [
-                { id: "001", band: 'Tesla', model: '3', price: "3,090,000" },
+                { id: "001", name: 'ยันต์ฉัตรเพชร', detail: 'โดดเด่นด้านโชคลาภการเงิน แก้ดวงชะตาที่ตกต่ำ และเสริมดวงชะตา เหมาะสำหรับผู้ที่ทำงานห้างร้าน ค้าขาย บริษัท มีบริวาร (ลูกน้อง) เยอะ ควบคุมอยู่', price: "5000" },
     
             ]
     }
@@ -105,8 +103,8 @@ router.route('/Yans/:yan_id') //params
         console.log(req.body)
         let newYan = {}
         newYan.id = (BuyYans.list.length) ? BuyYans.list[BuyYans.list.length-1].id+1 : 1
-        newYan.band = req.body.band
-        newYan.model = req.body.model
+        newYan.name = req.body.name
+        newYan.detail = req.body.detail
         newYan.price  = req.body.price
         BuyYans = { list: [...BuyYans.list, newYan] }
         res.json(BuyYans)
@@ -131,8 +129,8 @@ router.route('/BuyYans/:yan_id')
             res.send('Not Found')
         }
         else {
-            BuyYans.list[id].band = req.body.band
-            BuyYans.list[id].model = req.body.model
+            BuyYans.list[id].name = req.body.name
+            BuyYans.list[id].detail = req.body.detail
             BuyYans.list[id].price = req.body.price
             res.json(BuyYans)
         }

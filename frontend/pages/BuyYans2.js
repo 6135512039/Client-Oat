@@ -24,10 +24,14 @@ export default function BuyYans2({ token }) {
                 <title>User profile</title> 
             </Head>
             <Navbar />
-            <div className={styles.container}>
-                <h1>Buy Yans</h1>
-                <h2>Buy successful !</h2>
+            <body className="backgroundindex2">
+            <div class="flex items-center justify-center min-h-screen">
+                <br></br>
+                <div>
+                    <h2 class="text-white text-4xl">Buy Successful</h2>
+                </div>
             </div>
+            </body>
         </Layout>
     )
 }

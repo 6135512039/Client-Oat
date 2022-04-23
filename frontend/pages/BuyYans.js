@@ -17,7 +17,7 @@ export default function BuyYans({ token }) {
     const [Yans, setYans] = useState( {
         list:
             [
-                { id: "001", band: 'Tesla', model: '3', price: "3,090,000" },
+                { id: "001", name: 'ยันต์ฉัตรเพชร', detail: 'โดดเด่นด้านโชคลาภการเงิน แก้ดวงชะตาที่ตกต่ำ และเสริมดวงชะตา เหมาะสำหรับผู้ที่ทำงานห้างร้าน ค้าขาย บริษัท มีบริวาร (ลูกน้อง) เยอะ ควบคุมอยู่', price: "5000" },
             ]
     })
 
@@ -40,10 +40,12 @@ export default function BuyYans({ token }) {
         if (Yans.list && Yans.list.length)
             return (Yans.list.map((Yan, index) =>
             (<li key={index} className={styles.listItem3}>
-               <b>Band : {(Yan) ? Yan.band : '-'}</b> 
-               <b>Model : {(Yan) ? Yan.model : '-'}</b>   
+               <b>Name : {(Yan) ? Yan.name : '-'}</b> 
+               <br/>
+               <b>Detail : {(Yan) ? Yan.detail : '-'}</b> 
+               <br/>  
                <b>Price : {(Yan) ? Yan.price : '-'}</b>
-               
+               <br/>
                <button onClick={() => deleteYan(Yan.id)} className={`${styles.button} ${styles.btnDelete}`}> Delete </button>
             </li>)
             ))
@@ -64,7 +66,7 @@ export default function BuyYans({ token }) {
             <Navbar />
             <div className={styles.container}>
                 <br></br><br></br><br></br>
-                <h1>Add Cart SUKYANS</h1>
+                <h1 className="text-2xl">Add Cart Yan Shop</h1>
                 <br></br><br></br><br></br>
                 <ul className={styles.list}>
                     {printYans()}

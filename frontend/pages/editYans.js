@@ -11,12 +11,11 @@ const URL = `${config.URL}/Yans`;
 const editYans = ({ token }) => {
   const [Yans, setYans] = useState({
     list: [
-      { id: "001", band: "Tesla", model: "3", hp: 450, price: "3,090,000" },
+      { id: "001", name: 'ยันต์ฉัตรเพชร', detail: 'โดดเด่นด้านโชคลาภการเงิน แก้ดวงชะตาที่ตกต่ำ และเสริมดวงชะตา เหมาะสำหรับผู้ที่ทำงานห้างร้าน ค้าขาย บริษัท มีบริวาร (ลูกน้อง) เยอะ ควบคุมอยู่', price: "5000" },
     ],
   });
-  const [band, setBand] = useState("");
-  const [model, setModel] = useState("");
-  const [hp, setHP] = useState("");
+  const [name, setName] = useState("");
+  const [detail, setDetail] = useState("");
   const [price, setPrice] = useState(0);
 
   useEffect(() => {
@@ -32,10 +31,12 @@ const editYans = ({ token }) => {
     if (Yans.list && Yans.list.length)
       return Yans.list.map((Yan, index) => (
         <li key={index} className={styles.listItem2}>
-          <b>Band : {Yan ? Yan.band : "-"} </b>
-          <b>Model : {Yan ? Yan.model : "-"}</b>
-          <b>HP : {Yan ? Yan.hp : "-"} </b>
+          <b>Name : {Yan ? Yan.name : "-"} </b>
+          <br/>
+          <b>Detail : {Yan ? Yan.detail : "-"}</b>
+          <br/>
           <b>Price : {Yan ? Yan.price : "-"} </b>
+          <br/>
           <button
             onClick={() => updateYan(Yan.id)}
             className={`${styles.button} ${styles.btnEdit}`}
@@ -52,12 +53,12 @@ const editYans = ({ token }) => {
         </li>
       ));
     else {
-      return <h2>No Yans</h2>;
+      return (<h2>No Yans</h2>);
     }
   };
 
-  const addYan = async (band, model, hp, price) => {
-    let result = await axios.post(URL, { band, model, hp, price });
+  const addYan = async (name, detail, price) => {
+    let result = await axios.post(URL, { name, detail, price });
     console.log(result.data);
     setYans(result.data);
   };
@@ -69,10 +70,9 @@ const editYans = ({ token }) => {
   };
   const updateYan = async (id) => {
     const result = await axios.put(`${URL}/${id}`, {
-      band,
-      model,
-      hp,
-      price,
+      name,
+      detail,
+      price
     });
     console.log("Yan id update: ", result.data);
     setYans(result.data);
@@ -98,29 +98,20 @@ const editYans = ({ token }) => {
             <br></br>
             
             <div class="mt-4">
-            <label class="block">Band</label>
+            <label class="block">Name</label>
             <input
               class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"  
               type="text"
-              onChange={(e) => setBand(e.target.value)}
+              onChange={(e) => setName(e.target.value)}
               
             />
             </div>
             <div class="mt-4">
-            <label class="block">Model</label>
+            <label class="block">Detail</label>
             <input
               class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"  
               type="text"
-              onChange={(e) => setModel(e.target.value)}    
-            />
-            </div>
-            <div class="mt-4">
-            <label class="block">HP</label>
-            <input
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"  
-              type="text"
-              onChange={(e) => setHP(e.target.value)}
-              
+              onChange={(e) => setDetail(e.target.value)}    
             />
             </div>
             <div class="mt-4">
@@ -134,7 +125,7 @@ const editYans = ({ token }) => {
             <div className="mt-4">
             <button
             class=" w-full h-10 px-6 py-2 mt-4 text-white bg-gray-600 rounded-lg hover:bg-gray-900"
-            onClick={() => addYan(band, model, hp, price)}>
+            onClick={() => addYan(name, detail, price)}>
               Add New Yan
             </button>
             </div>

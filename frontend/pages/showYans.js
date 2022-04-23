@@ -14,7 +14,7 @@ const showYans = ({ token }) => {
     const [Yans, setYans] = useState( {
         list:
             [
-                { id: "001", band: 'Tesla', model: '3', hp: 450, price: "3,090,000" },
+                { id: "001", name: 'ยันต์ฉัตรเพชร', detail: 'โดดเด่นด้านโชคลาภการเงิน แก้ดวงชะตาที่ตกต่ำ และเสริมดวงชะตา เหมาะสำหรับผู้ที่ทำงานห้างร้าน ค้าขาย บริษัท มีบริวาร (ลูกน้อง) เยอะ ควบคุมอยู่', price: "5000" },
             ]
     })
 
@@ -27,14 +27,14 @@ const showYans = ({ token }) => {
         setYans(Yan.data)
     }
 
-    const addYan = async (band, model, hp, price) => {
-        let result = await axios.post(URL, { band, model, hp, price })
+    const addYan = async (name, detail, price) => {
+        let result = await axios.post(URL, { name, detail, price })
         console.log(result.data)
         setYans(result.data)
     }
 
-    const addCart = async (band, model, hp, price) => {
-        let result = await axios.post(URL2, { band, model, hp, price })
+    const addCart = async (name, detail, price) => {
+        let result = await axios.post(URL2, { name, detail, price })
         console.log(result.data)
         setCart(result.data)
     }
@@ -44,11 +44,13 @@ const showYans = ({ token }) => {
         if (Yans.list && Yans.list.length)
             return (Yans.list.map((Yan, index) =>
             (<li key={index} className={styles.listItem4}>
-               <b>Band : {(Yan) ? Yan.band : '-'}</b> 
-               <b>Model : {(Yan) ? Yan.model : '-'}</b>   
-               <b>HP : {(Yan) ? Yan.hp : '-'}</b>  
+               <b>Name : {(Yan) ? Yan.name : '-'}</b> 
+               <br/>
+               <b>Detail : {(Yan) ? Yan.detail : '-'}</b> 
+               <br/>  
                <b>Price : {(Yan) ? Yan.price : '-'}</b> 
-               <a href="/BuyYans"><button onClick={() => addCart(Yan.band, Yan.model, Yan.hp, Yan.price)} className={`${styles.button} ${styles.btnEdit}`}>Add  Cart</button></a>
+               <br/>
+               <a href="/BuyYans"><button onClick={() => addCart(Yan.name, Yan.detail, Yan.price)} className={`${styles.button} ${styles.btnEdit}`}>Add  Cart</button></a>
             </li>)
             ))
         else {
@@ -65,7 +67,7 @@ const showYans = ({ token }) => {
             <div className={styles.container}>
                 {JSON.stringify(Yans.Yans)}
                 <br></br><br></br><br></br>
-                <h1>Yans List</h1>
+                <h1 className="text-2xl">Yans Shop</h1>
                 <ul className={styles.list}>
                     {printYans()}
                 </ul>  

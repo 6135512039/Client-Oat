@@ -62,12 +62,11 @@
    margin: 0 auto 100px;
    padding: 40px;
    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-   background-image: url("https://static.vecteezy.com/system/resources/previews/000/623/448/non_2x/auto-car-logo-template-vector-icon.jpg");
+   background-color: #f2f2f2;
    background-repeat: no-repeat;
    background-size: cover;
-   height: 25VH;
+   height: full;
    width: 40VW;
-
 }
  
 .buttonContainer {
@@ -116,10 +115,10 @@
    margin: 0 auto 100px;
    padding: 40px;
    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-   background-image: url("https://static.vecteezy.com/system/resources/previews/000/623/448/non_2x/auto-car-logo-template-vector-icon.jpg");
+   background-color: #f2f2f2;
    background-repeat: no-repeat;
    background-size: cover;
-   height: 35VH;
+   height: full;
    width: 40VW;
 }
 
@@ -133,12 +132,12 @@
    z-index: 1;
    max-width: 360px;
    margin: 0 auto 100px;
-   padding: 45px;
+   padding: 40px;
    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-   background-image: url("https://static.vecteezy.com/system/resources/previews/000/623/448/non_2x/auto-car-logo-template-vector-icon.jpg");
+   background-color: #f2f2f2;
    background-repeat: no-repeat;
    background-size: cover;
-   height: 25VH;
+   height: full;
    width: 40VW;
 }
 
@@ -152,12 +151,12 @@
    z-index: 1;
    max-width: 360px;
    margin: 0 auto 100px;
-   padding: 45px;
+   padding: 40px;
    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-   background-image: url("https://static.vecteezy.com/system/resources/previews/000/623/448/non_2x/auto-car-logo-template-vector-icon.jpg");
+   background-color: #f2f2f2;
    background-repeat: no-repeat;
    background-size: cover;
-   height: 30VH;
+   height: full;
    width: 40VW;
 }
  

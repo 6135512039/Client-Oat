@@ -31,7 +31,7 @@ export default function Login({ token }) {
   const loginForm = () => (
     <div class="px-4 flex items-center justify-center min-h-screen">
       <div class="w-96 px-8 py-6 mt-3 text-left bg-white opacity-95 shadow-lg rounded-lg">
-        <h3 class=" mt-4 text-2xl font-bold text-center">Login to your account</h3>
+        <h3 class=" mt-4 text-2xl font-bold text-center">Login Admin</h3>
 
         <div className="mt-8">
           Status: {status}

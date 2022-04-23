@@ -9,9 +9,9 @@ const Navbar = () => (
   </div>
   <div class="hidden space-x-8 lg:flex text-white">
     <a href="/">Home</a>
+    <a href="/editYans">Yan Shop</a>
     <a href="/register">Register</a>
     <a href="/login">Login</a>
-    <a href="/editYans">Yan List</a>
     <a href="/logout">Logout</a>
   </div>
   <div class="flex lg:hidden">
